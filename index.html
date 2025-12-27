@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UX/UI &amp; AI Automation Portfolio</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./assets/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-container">
+      <div class="nav-brand"><a href="index.html">Your&nbsp;Name</a></div>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="case-studies.html">Case Studies</a></li>
+          <li><a href="process.html">Process</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container">
+        <h1>UX/UI Design &amp; AI Automation for Scalable Products</h1>
+        <p>
+          I design user‑centered interfaces and build AI‑powered workflows that reduce
+          friction, automate operations and support business growth across
+          industries.
+        </p>
+        <div class="cta-buttons">
+          <a href="case-studies.html" class="btn btn-primary">View Case Studies</a>
+          <a href="https://github.com" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">View GitHub</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services overview -->
+    <section>
+      <div class="container">
+        <h2 style="text-align:center; margin-bottom:2rem;">What I Do</h2>
+        <div class="services-grid">
+          <div class="service-card">
+            <h3>UX/UI Design</h3>
+            <p>
+              User research, flows, wireframes and production‑ready UI for web and
+              internal tools. I focus on hierarchy, clarity and conversion.
+            </p>
+          </div>
+          <div class="service-card">
+            <h3>AI Automation</h3>
+            <p>
+              AI‑driven scheduling, CRM workflows and internal automations that
+              unlock efficiency and free up human bandwidth.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Industries -->
+    <section style="background-color:var(--bg-light);">
+      <div class="container" style="text-align:center;">
+        <h2>Industries Served</h2>
+        <div class="industries-list">
+          <span class="industry-tag">E‑commerce</span>
+          <span class="industry-tag">Healthcare</span>
+          <span class="industry-tag">Real Estate</span>
+          <span class="industry-tag">Local Services</span>
+          <span class="industry-tag">SaaS</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured case studies -->
+    <section>
+      <div class="container">
+        <h2 style="text-align:center; margin-bottom:2rem;">Featured Case Studies</h2>
+        <div class="cases-grid">
+          <div class="case-card">
+            <h4>E‑commerce Conversion Redesign</h4>
+            <div class="case-meta">Industry: E‑commerce</div>
+            <span class="case-status">In Progress</span>
+          </div>
+          <div class="case-card">
+            <h4>Healthcare Appointment Platform</h4>
+            <div class="case-meta">Industry: Healthcare</div>
+            <span class="case-status">Planned</span>
+          </div>
+          <div class="case-card">
+            <h4>AI Scheduling System</h4>
+            <div class="case-meta">Industry: Local Services</div>
+            <span class="case-status">In Progress</span>
+          </div>
+          <div class="case-card">
+            <h4>Real Estate Lead Automation</h4>
+            <div class="case-meta">Industry: Real Estate</div>
+            <span class="case-status">Planned</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Process summary -->
+    <section style="background-color:var(--bg-light);">
+      <div class="container">
+        <h2 style="text-align:center; margin-bottom:2rem;">My Process</h2>
+        <div class="process-steps">
+          <div class="process-step">
+            <h3>Discover</h3>
+            <p>User and business research to align on goals and pain points.</p>
+          </div>
+          <div class="process-step">
+            <h3>Design</h3>
+            <p>Flows, wireframes and polished UI with accessibility in mind.</p>
+          </div>
+          <div class="process-step">
+            <h3>Build</h3>
+            <p>Front‑end implementation and system integration.</p>
+          </div>
+          <div class="process-step">
+            <h3>Automate</h3>
+            <p>AI‑powered workflows that remove manual steps.</p>
+          </div>
+          <div class="process-step">
+            <h3>Optimize</h3>
+            <p>Testing and iterative improvements to drive results.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      © <span id="year"></span> Your Name ·
+      <a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a>
+      ·
+      <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      ·
+      <a href="contact.html">Contact</a>
+    </div>
+  </footer>
+
+  <script>
+    // Inject current year in footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
