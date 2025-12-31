@@ -1,169 +1,285 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>UX/UI &amp; AI Automation Portfolio</title>
-  <link rel="preconnect" href="https://fonts.gstatic.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="./assets/style.css" />
-</head>
-<body>
-  <header class="site-header">
-    <div class="container nav-container">
-      <div class="nav-brand"><a href="index.html">Laurielle Landry</a></div>
+<!doctype html>
+<html lang="en" class="h-full">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Laurielle Landry — Portfolio</title>
 
-      <nav>
-        <ul class="nav-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="case-studies.html">Case Studies</a></li>
-          <li><a href="process.html">Process</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+    <!-- Tailwind CDN (OK for static Netlify sites) -->
+    <script src="https://cdn.tailwindcss.com"></script>
 
-  <main>
-    <!-- Hero -->
-    <section class="hero">
-      <div class="container">
-        <h1>UX/UI Design &amp; AI Automation for Scalable Products</h1>
-        <p>
-          I design user‑centered interfaces and build AI‑powered workflows that reduce
-          friction, automate operations and support business growth across
-          industries.
+    <style>
+      body { box-sizing: border-box; }
+
+      .fade-in { animation: fadeIn 0.8s ease-in; }
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(30px); }
+        to   { opacity: 1; transform: translateY(0); }
+      }
+
+      .quick-link-card {
+        transition: all 0.3s ease-out;
+        cursor: pointer;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      .quick-link-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        border-color: rgba(236, 72, 153, 0.4);
+      }
+
+      .carousel-container { position: relative; overflow: hidden; }
+      .carousel-track { display: flex; transition: transform 0.5s ease-in-out; }
+      .carousel-item { min-width: 100%; transition: opacity 0.5s ease; }
+
+      .carousel-button {
+        transition: all 0.3s ease;
+        cursor: pointer;
+      }
+      .carousel-button:hover {
+        transform: scale(1.1);
+        opacity: 1 !important;
+      }
+
+      .carousel-dot {
+        width: 10px; height: 10px;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+      .carousel-dot:hover { transform: scale(1.3); opacity: 0.8; }
+    </style>
+  </head>
+
+  <body class="h-full">
+    <main
+      id="app"
+      class="w-full h-full overflow-auto"
+      style="
+        background-color: #2d0a1f;
+        color: #fce7f3;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+      "
+    >
+      <!-- Hero Section -->
+      <header
+        id="hero"
+        class="min-h-screen flex flex-col items-center justify-center px-6 py-12"
+      >
+        <div class="text-center fade-in max-w-4xl mb-16">
+          <h1
+            id="hero-title"
+            class="text-5xl font-bold mb-3 leading-tight tracking-tight"
+          >
+            Laurielle Landry
+          </h1>
+          <p
+            id="hero-tagline"
+            class="text-lg font-light tracking-wide opacity-90"
+          >
+            User Experience &amp; Automation Strategist
+          </p>
+        </div>
+
+        <!-- Quick Links Grid -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-5 max-w-5xl w-full px-6 fade-in">
+          <!-- Resume Card -->
+          <div id="card-resume" class="quick-link-card rounded-xl p-6 text-center backdrop-blur-sm" style="background-color: rgba(74, 24, 56, 0.80);">
+            <div class="mb-3">
+              <svg class="w-10 h-10 mx-auto" fill="currentColor" viewBox="0 0 24 24" style="color:#ec4899;" xmlns="http://www.w3.org/2000/svg">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"></path>
+                <path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"></path>
+              </svg>
+            </div>
+            <h2 class="text-base font-semibold mb-1">Download Resume</h2>
+            <p class="text-xs opacity-70">View my experience &amp; skills</p>
+          </div>
+
+          <!-- Projects Card -->
+          <div id="card-projects" class="quick-link-card rounded-xl p-6 text-center backdrop-blur-sm" style="background-color: rgba(74, 24, 56, 0.80);">
+            <div class="mb-3">
+              <svg class="w-10 h-10 mx-auto" fill="currentColor" viewBox="0 0 24 24" style="color:#ec4899;" xmlns="http://www.w3.org/2000/svg">
+                <path d="M20 6h-4V4c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v2H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-6 0h-4V4h4v2z"></path>
+              </svg>
+            </div>
+            <h2 class="text-base font-semibold mb-1">My Projects</h2>
+            <p class="text-xs opacity-70">Explore my creative work</p>
+          </div>
+
+          <!-- LinkedIn Card -->
+          <div id="card-linkedin" class="quick-link-card rounded-xl p-6 text-center backdrop-blur-sm" style="background-color: rgba(74, 24, 56, 0.80);">
+            <div class="mb-3">
+              <svg class="w-10 h-10 mx-auto" fill="currentColor" viewBox="0 0 24 24" style="color:#ec4899;" xmlns="http://www.w3.org/2000/svg">
+                <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"></path>
+              </svg>
+            </div>
+            <h2 class="text-base font-semibold mb-1">LinkedIn</h2>
+            <p class="text-xs opacity-70">Connect with me professionally</p>
+          </div>
+
+          <!-- Contact Card -->
+          <div id="card-contact" class="quick-link-card rounded-xl p-6 text-center backdrop-blur-sm" style="background-color: rgba(74, 24, 56, 0.80);">
+            <div class="mb-3">
+              <svg class="w-10 h-10 mx-auto" fill="currentColor" viewBox="0 0 24 24" style="color:#ec4899;" xmlns="http://www.w3.org/2000/svg">
+                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"></path>
+              </svg>
+            </div>
+            <h2 class="text-base font-semibold mb-1">Get In Touch</h2>
+            <p class="text-xs opacity-70">Let’s create something amazing</p>
+          </div>
+        </div>
+      </header>
+
+      <!-- Featured Projects Carousel -->
+      <section id="carousel-section" class="py-20 px-6">
+        <div class="max-w-5xl mx-auto">
+          <h2 id="carousel-heading" class="text-3xl font-bold mb-10 text-center tracking-tight">Featured Projects</h2>
+
+          <div class="carousel-container relative rounded-xl overflow-hidden shadow-xl" style="border: 1px solid rgba(255, 255, 255, 0.1); background: rgba(74, 24, 56, 0.55);">
+            <div id="carousel-track" class="carousel-track">
+              <div class="carousel-item p-12 py-16">
+                <div class="text-center">
+                  <div class="mb-5">
+                    <svg class="w-14 h-14 mx-auto" fill="currentColor" viewBox="0 0 24 24" style="color:#ec4899;" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-5.5-2.5l7.51-3.49L17.5 6.5 9.99 9.99 6.5 17.5zm5.5-6.6c.61 0 1.1.49 1.1 1.1s-.49 1.1-1.1 1.1-1.1-.49-1.1-1.1.49-1.1 1.1-1.1z"></path>
+                    </svg>
+                  </div>
+                  <h3 class="text-2xl font-semibold mb-3 tracking-tight">Brand Identity Design</h3>
+                  <p class="text-base leading-relaxed max-w-2xl mx-auto opacity-80">
+                    Complete brand redesign for a tech startup, including logo design, color palette, typography system, and comprehensive style guide.
+                  </p>
+                </div>
+              </div>
+
+              <div class="carousel-item p-12 py-16">
+                <div class="text-center">
+                  <div class="mb-5">
+                    <svg class="w-14 h-14 mx-auto" fill="currentColor" viewBox="0 0 24 24" style="color:#ec4899;" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z"></path>
+                    </svg>
+                  </div>
+                  <h3 class="text-2xl font-semibold mb-3 tracking-tight">Mobile App Interface</h3>
+                  <p class="text-base leading-relaxed max-w-2xl mx-auto opacity-80">
+                    Designed and prototyped a productivity app with an intuitive interface, seamless animations, and delightful user experience.
+                  </p>
+                </div>
+              </div>
+
+              <div class="carousel-item p-12 py-16">
+                <div class="text-center">
+                  <div class="mb-5">
+                    <svg class="w-14 h-14 mx-auto" fill="currentColor" viewBox="0 0 24 24" style="color:#ec4899;" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M21 8c-1.45 0-2.26 1.44-1.93 2.51l-3.55 3.56c-.3-.09-.74-.09-1.04 0l-2.55-2.55C12.27 10.45 11.46 9 10 9c-1.45 0-2.27 1.44-1.93 2.52l-4.56 4.55C2.44 15.74 1 16.55 1 18c0 1.1.9 2 2 2 1.45 0 2.26-1.44 1.93-2.51l4.55-4.56c.3.09.74.09 1.04 0l2.55 2.55C12.73 16.55 13.54 18 15 18c1.45 0 2.27-1.44 1.93-2.52l3.56-3.55c1.07.33 2.51-.48 2.51-1.93 0-1.1-.9-2-2-2z"></path>
+                    </svg>
+                  </div>
+                  <h3 class="text-2xl font-semibold mb-3 tracking-tight">E-commerce Platform</h3>
+                  <p class="text-base leading-relaxed max-w-2xl mx-auto opacity-80">
+                    Built a fully responsive online store with custom checkout flow, product filtering, and integrated payment processing.
+                  </p>
+                </div>
+              </div>
+
+              <div class="carousel-item p-12 py-16">
+                <div class="text-center">
+                  <div class="mb-5">
+                    <svg class="w-14 h-14 mx-auto" fill="currentColor" viewBox="0 0 24 24" style="color:#ec4899;" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"></path>
+                    </svg>
+                  </div>
+                  <h3 class="text-2xl font-semibold mb-3 tracking-tight">Interactive Experience</h3>
+                  <p class="text-base leading-relaxed max-w-2xl mx-auto opacity-80">
+                    Created an immersive web experience featuring parallax scrolling, 3D animations, and engaging storytelling elements.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Nav Buttons -->
+            <button id="prev-btn" class="carousel-button absolute left-4 top-1/2 transform -translate-y-1/2 w-12 h-12 rounded-full flex items-center justify-center text-xl opacity-70 z-10 backdrop-blur-sm"
+              style="background:#9d174d; color:#fce7f3;">
+              ←
+            </button>
+
+            <button id="next-btn" class="carousel-button absolute right-4 top-1/2 transform -translate-y-1/2 w-12 h-12 rounded-full flex items-center justify-center text-xl opacity-70 z-10 backdrop-blur-sm"
+              style="background:#9d174d; color:#fce7f3;">
+              →
+            </button>
+
+            <!-- Dots -->
+            <div id="dots-container" class="flex justify-center gap-2 mt-6 pb-4">
+              <div class="carousel-dot" data-index="0"></div>
+              <div class="carousel-dot" data-index="1"></div>
+              <div class="carousel-dot" data-index="2"></div>
+              <div class="carousel-dot" data-index="3"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer id="footer" class="py-12 px-6 text-center">
+        <p id="footer-text" class="text-base opacity-75">
+          © <span id="year"></span> Laurielle Landry. Intuitive UX. Streamlined workflows.
         </p>
-        <div class="cta-buttons">
-          <a href="case-studies.html" class="btn btn-primary">View Case Studies</a>
-          <a href="https://github.com" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">View GitHub</a>
-        </div>
-      </div>
-    </section>
+      </footer>
+    </main>
 
-   <!-- Quick Links -->
-<section class="quick-links">
-  <div class="container">
-    <h2 class="section-title">Explore</h2>
+    <script>
+      // ===== Carousel =====
+      let currentSlide = 0;
+      const totalSlides = 4;
 
-    <div class="quick-grid">
-      <a class="quick-card" href="https://github.com/laulanddesigns" target="_blank" rel="noopener noreferrer">
-        <h3>GitHub</h3>
-        <p>View repositories, source code, and technical work.</p>
-        <span class="quick-cta">Open GitHub →</span>
-      </a>
+      function updateCarousel() {
+        const track = document.getElementById("carousel-track");
+        track.style.transform = `translateX(-${currentSlide * 100}%)`;
 
-      <a class="quick-card" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">
-        <h3>LinkedIn</h3>
-        <p>Professional background, experience, and network.</p>
-        <span class="quick-cta">Open LinkedIn →</span>
-      </a>
+        const dots = document.querySelectorAll(".carousel-dot");
+        dots.forEach((dot, index) => {
+          dot.style.backgroundColor = index === currentSlide ? "#ec4899" : "#9d174d";
+        });
+      }
 
-      <a class="quick-card" href="assets/Laurielle_Landry_Branding_AI_Resume.pdf" download>
-        <h3>Resume</h3>
-        <p>Download a copy of my resume (PDF).</p>
-        <span class="quick-cta">Download →</span>
-      </a>
+      document.getElementById("prev-btn").addEventListener("click", () => {
+        currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+        updateCarousel();
+      });
 
-      <a class="quick-card" href="case-studies.html">
-        <h3>Projects</h3>
-        <p>UX/UI case studies and AI automation work.</p>
-        <span class="quick-cta">View Projects →</span>
-      </a>
-    </div>
-  </div>
-</section>
+      document.getElementById("next-btn").addEventListener("click", () => {
+        currentSlide = (currentSlide + 1) % totalSlides;
+        updateCarousel();
+      });
 
+      document.querySelectorAll(".carousel-dot").forEach((dot) => {
+        dot.addEventListener("click", () => {
+          currentSlide = parseInt(dot.dataset.index, 10);
+          updateCarousel();
+        });
+      });
 
-    <!-- Industries -->
-    <section style="background-color:var(--bg-light);">
-      <div class="container" style="text-align:center;">
-        <h2>Industries Served</h2>
-        <div class="industries-list">
-          <span class="industry-tag">E‑commerce</span>
-          <span class="industry-tag">Healthcare</span>
-          <span class="industry-tag">Real Estate</span>
-          <span class="industry-tag">Local Services</span>
-          <span class="industry-tag">SaaS</span>
-        </div>
-      </div>
-    </section>
+      // ===== Cards =====
+      document.getElementById("card-resume").addEventListener("click", () => {
+        // Make sure this file exists in your repo:
+        // assets/Laurielle_Landry_Branding_AI_Resume.pdf
+        window.open("assets/Laurielle_Landry_Branding_AI_Resume.pdf", "_blank", "noopener,noreferrer");
+      });
 
-    <!-- Featured case studies -->
-    <section>
-      <div class="container">
-        <h2 style="text-align:center; margin-bottom:2rem;">Featured Case Studies</h2>
-        <div class="cases-grid">
-          <div class="case-card">
-            <h4>E‑commerce Conversion Redesign</h4>
-            <div class="case-meta">Industry: E‑commerce</div>
-            <span class="case-status">In Progress</span>
-          </div>
-          <div class="case-card">
-            <h4>Healthcare Appointment Platform</h4>
-            <div class="case-meta">Industry: Healthcare</div>
-            <span class="case-status">Planned</span>
-          </div>
-          <div class="case-card">
-            <h4>AI Scheduling System</h4>
-            <div class="case-meta">Industry: Local Services</div>
-            <span class="case-status">In Progress</span>
-          </div>
-          <div class="case-card">
-            <h4>Real Estate Lead Automation</h4>
-            <div class="case-meta">Industry: Real Estate</div>
-            <span class="case-status">Planned</span>
-          </div>
-        </div>
-      </div>
-    </section>
+      document.getElementById("card-projects").addEventListener("click", () => {
+        document.getElementById("carousel-section").scrollIntoView({ behavior: "smooth" });
+      });
 
-    <!-- Process summary -->
-    <section style="background-color:var(--bg-light);">
-      <div class="container">
-        <h2 style="text-align:center; margin-bottom:2rem;">My Process</h2>
-        <div class="process-steps">
-          <div class="process-step">
-            <h3>Discover</h3>
-            <p>User and business research to align on goals and pain points.</p>
-          </div>
-          <div class="process-step">
-            <h3>Design</h3>
-            <p>Flows, wireframes and polished UI with accessibility in mind.</p>
-          </div>
-          <div class="process-step">
-            <h3>Build</h3>
-            <p>Front‑end implementation and system integration.</p>
-          </div>
-          <div class="process-step">
-            <h3>Automate</h3>
-            <p>AI‑powered workflows that remove manual steps.</p>
-          </div>
-          <div class="process-step">
-            <h3>Optimize</h3>
-            <p>Testing and iterative improvements to drive results.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
+      document.getElementById("card-linkedin").addEventListener("click", () => {
+        window.open("https://www.linkedin.com/in/lauriellelandry/", "_blank", "noopener,noreferrer");
+      });
 
-  <footer>
-    <div class="container">
-      © <span id="year"></span> Your Name ·
-      <a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a>
-      ·
-      <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-      ·
-      <a href="contact.html">Contact</a>
-    </div>
-  </footer>
+      document.getElementById("card-contact").addEventListener("click", () => {
+        window.open("mailto:llandrytech@gmail.com", "_blank", "noopener,noreferrer");
+      });
 
-  <script>
-    // Inject current year in footer
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
-</body>
+      // Footer year
+      document.getElementById("year").textContent = new Date().getFullYear();
+
+      // Init
+      updateCarousel();
+    </script>
+  </body>
 </html>
