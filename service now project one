@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="en" class="h-full">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ServiceNow Automation Case Study | Laurielle Landry</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    :root{
+      --bg:#2d0a1f;
+      --surface:#4a1838;
+      --text:#fce7f3;
+      --primary:#ec4899;
+      --secondary:#9d174d;
+    }
+    body{ background:var(--bg); color:var(--text); font-family: Georgia, "Times New Roman", Times, serif; }
+    .glass { background: rgba(74,24,56,0.78); border: 1px solid rgba(255,255,255,0.10); backdrop-filter: blur(10px); }
+    .card { background: rgba(74,24,56,0.80); border: 1px solid rgba(255,255,255,0.10); }
+    .chip { border: 1px solid rgba(236,72,153,0.35); }
+    .link { color: var(--primary); }
+    .link:hover { text-decoration: underline; }
+    .fade-in { animation: fadeIn 0.6s ease-out; }
+    @keyframes fadeIn{ from{opacity:0; transform: translateY(10px);} to{opacity:1; transform: translateY(0);} }
+  </style>
+</head>
+
+<body class="min-h-screen">
+  <!-- Top bar -->
+  <header class="sticky top-0 z-20 border-b border-white/10 bg-[#2d0a1f]/90 backdrop-blur">
+    <div class="mx-auto max-w-6xl px-6 py-4 flex items-center justify-between">
+      <a href="/index.html" class="text-sm opacity-90 hover:opacity-100">← Back to Home</a>
+
+      <div class="flex items-center gap-3">
+        <a href="/projects.html" class="text-sm opacity-90 hover:opacity-100">Projects</a>
+        <span class="h-4 w-px bg-white/20"></span>
+        <a href="https://www.linkedin.com/in/laurielledesigns/" target="_blank" rel="noreferrer" class="text-sm opacity-90 hover:opacity-100">LinkedIn</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="mx-auto max-w-6xl px-6 py-12">
+    <!-- Hero -->
+    <section class="fade-in">
+      <div class="glass rounded-2xl p-8 md:p-10">
+        <p class="text-xs tracking-[0.2em] uppercase opacity-80 mb-3">Featured Automation Case Study</p>
+        <h1 class="text-3xl md:text-4xl font-bold leading-tight tracking-tight">
+          Reducing Workflow Friction Through Human-Centered Automation
+        </h1>
+
+        <p class="mt-4 text-base md:text-lg opacity-90 max-w-3xl">
+          A UX-led workflow redesign in <span class="font-semibold">ServiceNow</span> to streamline internal
+          <span class="font-semibold">intake → tracking → follow-up</span> and reduce repetitive admin work.
+        </p>
+
+        <!-- Meta chips -->
+        <div class="mt-6 flex flex-wrap gap-3">
+          <span class="chip rounded-full px-4 py-2 text-xs opacity-90">Platform: ServiceNow</span>
+          <span class="chip rounded-full px-4 py-2 text-xs opacity-90">Audience: Internal teams</span>
+          <span class="chip rounded-full px-4 py-2 text-xs opacity-90">Focus: Intake → Tracking → Follow-up</span>
+          <span class="chip rounded-full px-4 py-2 text-xs opacity-90">Role: UX & Automation Strategist</span>
+        </div>
+
+        <!-- Jump links -->
+        <div class="mt-8 flex flex-wrap gap-4 text-sm">
+          <a class="link" href="#tldr">TL;DR</a>
+          <a class="link" href="#problem">Problem</a>
+          <a class="link" href="#process">Process</a>
+          <a class="link" href="#solution">Solution</a>
+          <a class="link" href="#impact">Impact</a>
+          <a class="link" href="#demo">Interactive Demo</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- TL;DR -->
+    <section id="tldr" class="mt-8 fade-in">
+      <div class="grid md:grid-cols-3 gap-5">
+        <div class="card rounded-2xl p-6">
+          <h2 class="text-lg font-semibold mb-2">Problem</h2>
+          <p class="text-sm opacity-85">
+            Repetitive admin work + manual status tracking created delays, errors, and unnecessary follow-ups.
+          </p>
+        </div>
+        <div class="card rounded-2xl p-6">
+          <h2 class="text-lg font-semibold mb-2">Solution</h2>
+          <p class="text-sm opacity-85">
+            Designed a clear ServiceNow workflow that automates intake, visibility, and follow-through while
+            keeping humans in control.
+          </p>
+        </div>
+        <div class="card rounded-2xl p-6">
+          <h2 class="text-lg font-semibold mb-2">Outcome</h2>
+          <p class="text-sm opacity-85">
+            Reduced manual effort, improved consistency, and enabled the team to focus on higher-value work.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Problem + Constraints -->
+    <section id="problem" class="mt-8 fade-in">
+      <div class="card rounded-2xl p-8">
+        <h2 class="text-2xl font-bold tracking-tight mb-3">The Problem</h2>
+        <p class="text-base opacity-90 max-w-4xl">
+          Internal teams were spending time on administrative busywork: collecting requests, re-entering the same data,
+          chasing updates, and sending routine follow-ups. From a UX perspective, the workflow increased
+          <span class="font-semibold">cognitive load</span>, made progress hard to see, and created “did this fall through the cracks?” anxiety.
+        </p>
+
+        <div class="mt-6 grid md:grid-cols-2 gap-6">
+          <div class="rounded-xl border border-white/10 p-6">
+            <h3 class="text-lg font-semibold mb-2">Friction Signals</h3>
+            <ul class="text-sm opacity-90 space-y-2">
+              <li>• Repeated data entry across touchpoints</li>
+              <li>• Status visibility depended on asking someone</li>
+              <li>• Follow-ups were manual and inconsistent</li>
+              <li>• High context switching between tools</li>
+            </ul>
+          </div>
+
+          <div class="rounded-xl border border-white/10 p-6">
+            <h3 class="text-lg font-semibold mb-2">Constraints</h3>
+            <ul class="text-sm opacity-90 space-y-2">
+              <li>• Must use existing enterprise platform (ServiceNow)</li>
+              <li>• Minimal engineering lift</li>
+              <li>• Non-technical internal users</li>
+              <li>• Must scale without becoming “complex”</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Process -->
+    <section id="process" class="mt-8 fade-in">
+      <div class="card rounded-2xl p-8">
+        <h2 class="text-2xl font-bold tracking-tight mb-6">UX-Led Process</h2>
+
+        <div class="grid md:grid-cols-5 gap-3">
+          <button class="stepBtn rounded-xl border border-white/10 p-4 text-left hover:border-pink-400/40 transition"
+                  data-step="0">
+            <p class="text-xs tracking-[0.18em] uppercase opacity-70">Step 1</p>
+            <p class="font-semibold mt-1">Map workflow</p>
+          </button>
+
+          <button class="stepBtn rounded-xl border border-white/10 p-4 text-left hover:border-pink-400/40 transition"
+                  data-step="1">
+            <p class="text-xs tracking-[0.18em] uppercase opacity-70">Step 2</p>
+            <p class="font-semibold mt-1">Find friction</p>
+          </button>
+
+          <button class="stepBtn rounded-xl border border-white/10 p-4 text-left hover:border-pink-400/40 transition"
+                  data-step="2">
+            <p class="text-xs tracking-[0.18em] uppercase opacity-70">Step 3</p>
+            <p class="font-semibold mt-1">Simplify</p>
+          </button>
+
+          <button class="stepBtn rounded-xl border border-white/10 p-4 text-left hover:border-pink-400/40 transition"
+                  data-step="3">
+            <p class="text-xs tracking-[0.18em] uppercase opacity-70">Step 4</p>
+            <p class="font-semibold mt-1">Automate selectively</p>
+          </button>
+
+          <button class="stepBtn rounded-xl border border-white/10 p-4 text-left hover:border-pink-400/40 transition"
+                  data-step="4">
+            <p class="text-xs tracking-[0.18em] uppercase opacity-70">Step 5</p>
+            <p class="font-semibold mt-1">Validate usability</p>
+          </button>
+        </div>
+
+        <div id="processPanel" class="mt-6 rounded-2xl border border-white/10 p-6">
+          <h3 id="processTitle" class="text-lg font-semibold mb-2">Map workflow</h3>
+          <p id="processBody" class="text-sm opacity-90 max-w-4xl">
+            Documented current intake, handoffs, and follow-up loops to pinpoint where users lost time or confidence.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Solution -->
+    <section id="solution" class="mt-8 fade-in">
+      <div class="card rounded-2xl p-8">
+        <h2 class="text-2xl font-bold tracking-tight mb-3">Solution</h2>
+        <p class="text-base opacity-90 max-w-4xl">
+          Designed a streamlined ServiceNow workflow that improves clarity without overwhelming users.
+          The system handles routine steps; users keep control where judgment matters.
+        </p>
+
+        <div class="mt-6 grid md:grid-cols-4 gap-4">
+          <div class="rounded-xl border border-white/10 p-5">
+            <p class="text-xs tracking-[0.18em] uppercase opacity-70">1</p>
+            <p class="font-semibold mt-1">Structured Intake</p>
+            <p class="text-sm opacity-85 mt-2">Cleaner submissions with less back-and-forth.</p>
+          </div>
+          <div class="rounded-xl border border-white/10 p-5">
+            <p class="text-xs tracking-[0.18em] uppercase opacity-70">2</p>
+            <p class="font-semibold mt-1">Status Visibility</p>
+            <p class="text-sm opacity-85 mt-2">Reduced “where is this?” follow-ups.</p>
+          </div>
+          <div class="rounded-xl border border-white/10 p-5">
+            <p class="text-xs tracking-[0.18em] uppercase opacity-70">3</p>
+            <p class="font-semibold mt-1">Guided Follow-up</p>
+            <p class="text-sm opacity-85 mt-2">Consistent reminders and handoffs.</p>
+          </div>
+          <div class="rounded-xl border border-white/10 p-5">
+            <p class="text-xs tracking-[0.18em] uppercase opacity-70">4</p>
+            <p class="font-semibold mt-1">Human Control</p>
+            <p class="text-sm opacity-85 mt-2">Overrides + clarity where needed.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Impact -->
+    <section id="impact" class="mt-8 fade-in">
+      <div class="card rounded-2xl p-8">
+        <h2 class="text-2xl font-bold tracking-tight mb-3">Impact</h2>
+        <p class="text-sm opacity-85 mb-6">
+          *Note: If you don’t want numeric metrics on your portfolio yet, keep this qualitative (recruiters are fine with that).*
+        </p>
+
+        <div class="grid md:grid-cols-4 gap-4">
+          <div class="rounded-2xl p-6 border border-white/10">
+            <p class="text-2xl font-bold text-pink-300">↓ Manual work</p>
+            <p class="text-sm opacity-85 mt-1">Less repetitive admin effort</p>
+          </div>
+          <div class="rounded-2xl p-6 border border-white/10">
+            <p class="text-2xl font-bold text-pink-300">↑ Consistency</p>
+            <p class="text-sm opacity-85 mt-1">Fewer dropped tasks</p>
+          </div>
+          <div class="rounded-2xl p-6 border border-white/10">
+            <p class="text-2xl font-bold text-pink-300">↑ Clarity</p>
+            <p class="text-sm opacity-85 mt-1">Better status visibility</p>
+          </div>
+          <div class="rounded-2xl p-6 border border-white/10">
+            <p class="text-2xl font-bold text-pink-300">↑ Speed</p>
+            <p class="text-sm opacity-85 mt-1">Faster turnaround</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Demo -->
+    <section id="demo" class="mt-8 fade-in">
+      <div class="card rounded-2xl p-8">
+        <h2 class="text-2xl font-bold tracking-tight mb-3">Interactive Demo</h2>
+        <p class="text-base opacity-90 mb-6">Select a request type to see the workflow behavior.</p>
+
+        <div class="flex flex-wrap gap-3">
+          <button class="demoBtn rounded-xl px-4 py-3 border border-white/10 hover:border-pink-400/40 transition"
+                  data-type="standard">Standard</button>
+          <button class="demoBtn rounded-xl px-4 py-3 border border-white/10 hover:border-pink-400/40 transition"
+                  data-type="urgent">Urgent</button>
+          <button class="demoBtn rounded-xl px-4 py-3 border border-white/10 hover:border-pink-400/40 transition"
+                  data-type="complex">Complex</button>
+        </div>
+
+        <div id="demoPanel" class="mt-6 rounded-2xl border border-white/10 p-6">
+          <h3 class="text-lg font-semibold mb-2">Choose a scenario</h3>
+          <p class="text-sm opacity-90">You’ll see how the workflow supports clarity while keeping humans in control.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="mt-12 py-10 text-center opacity-80">
+      <p class="text-sm">© <span id="year"></span> Laurielle Landry. Human-centered design. Smarter workflows.</p>
+    </footer>
+  </main>
+
+  <script>
+    // Footer year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Process step interaction
+    const processSteps = [
+      { title: "Map workflow", body: "Documented current intake, handoffs, and follow-up loops to pinpoint where users lost time or confidence." },
+      { title: "Find friction", body: "Identified repetitive actions, unclear status moments, and edge cases that increased cognitive load and follow-up volume." },
+      { title: "Simplify", body: "Reduced steps, clarified responsibilities, and standardized the information needed to move work forward." },
+      { title: "Automate selectively", body: "Automated routine actions (routing, status updates, reminders) while preserving human oversight where judgment matters." },
+      { title: "Validate usability", body: "Checked that the workflow was predictable, learnable, and trustworthy for non-technical internal users." }
+    ];
+
+    const processTitle = document.getElementById('processTitle');
+    const processBody  = document.getElementById('processBody');
+
+    document.querySelectorAll('.stepBtn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const idx = Number(btn.dataset.step);
+        processTitle.textContent = processSteps[idx].title;
+        processBody.textContent  = processSteps[idx].body;
+
+        document.querySelectorAll('.stepBtn').forEach(b => b.classList.remove('border-pink-400/60'));
+        btn.classList.add('border-pink-400/60');
+      });
+    });
+
+    // Demo interaction
+    const demoPanel = document.getElementById('demoPanel');
+
+    const demos = {
+      standard: {
+        title: "Standard Request Flow",
+        bullets: [
+          "Auto-categorized from intake fields",
+          "Routed to the right queue/team",
+          "Standard SLA applied automatically",
+          "Confirmation sent to requester",
+          "Timed reminders if unresolved",
+          "Human touchpoint: assignment review"
+        ]
+      },
+      urgent: {
+        title: "Urgent Request Flow",
+        bullets: [
+          "Priority detected and flagged",
+          "Escalation routing to available owner",
+          "Expedited SLA applied automatically",
+          "Immediate notifications to owner + backup",
+          "Auto-escalation if stalled",
+          "Human touchpoint: manager visibility"
+        ]
+      },
+      complex: {
+        title: "Complex Request Flow",
+        bullets: [
+          "Complexity detected by scope",
+          "Broken into subtasks with dependencies",
+          "Multi-team routing where needed",
+          "Stakeholder update cadence initiated",
+          "Progress summaries generated",
+          "Human touchpoint: kickoff coordination"
+        ]
+      }
+    };
+
+    function renderDemo(type){
+      const d = demos[type];
+      const list = d.bullets.map(x => `<li class="text-sm opacity-90">• ${x}</li>`).join("");
+      demoPanel.innerHTML = `
+        <h3 class="text-lg font-semibold mb-2">${d.title}</h3>
+        <ul class="space-y-2">${list}</ul>
+      `;
+    }
+
+    document.querySelectorAll('.demoBtn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.demoBtn').forEach(b => b.classList.remove('border-pink-400/60'));
+        btn.classList.add('border-pink-400/60');
+        renderDemo(btn.dataset.type);
+      });
+    });
+  </script>
+</body>
+</html>
