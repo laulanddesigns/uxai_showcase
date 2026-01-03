@@ -358,6 +358,27 @@ textarea {
   transform: translateY(-6px);
   box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
 }
+.quick-link-card {
+  display: block;          /* makes <a> behave like <div> */
+  text-decoration: none;
+  color: inherit;
+}
+
+.quick-link-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
+}
+
+.quick-link-card:visited {
+  color: inherit;
+}
+
+.quick-link-card:focus-visible {
+  outline: 2px solid rgba(236, 72, 153, 0.7);
+  outline-offset: 4px;
+  border-radius: 1rem;
+}
+
 /* Normalize link cards so <a> cards match <div> cards */
 .quick-link-card {
   text-decoration: none;
